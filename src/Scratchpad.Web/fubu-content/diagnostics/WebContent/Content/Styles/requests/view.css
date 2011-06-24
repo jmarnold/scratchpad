@@ -1,0 +1,26 @@
+#nodes
+{
+    width:100%;
+}
+
+#nodes li
+{
+    list-style-type: none;
+    margin-top:10px;
+    text-align:left;
+}
+
+#nodes li .ui-button
+{
+    text-align:center;
+}
+
+h2.request
+{
+    margin-bottom:0;
+}
+
+h4.request-identifier
+{
+    font-style:italic;
+}

@@ -18,7 +18,7 @@ namespace Scratchpad.Web.Configuration
             this.UseSpark();
 
             Routes
-                .HomeIs<DashboardEndpoint>(e => e.Get(new DashboardRequestModel()));
+                .HomeIs<DashboardEndpoint>(e => e.Get(new DashboardRequest()));
 
             Views
                 .TryToAttachWithDefaultConventions();

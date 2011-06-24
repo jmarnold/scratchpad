@@ -11,7 +11,7 @@ namespace Scratchpad.Web.Endpoints
             _userRepository = userRepository;
         }
 
-        public DashboardViewModel Get(DashboardRequestModel request)
+        public DashboardViewModel Get(DashboardRequest request)
         {
             return new DashboardViewModel
                        {
@@ -20,7 +20,7 @@ namespace Scratchpad.Web.Endpoints
         }
     }
 
-    public class DashboardRequestModel { }
+    public class DashboardRequest { }
 
     public class DashboardViewModel
     {
