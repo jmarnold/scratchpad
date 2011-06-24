@@ -94,8 +94,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration\Bootstrapping\WebCoreRegistry.cs" />
+    <Compile Include="Configuration\FubuExtensions.cs" />
+    <Compile Include="Configuration\Policies\EndpointUrlPolicy.cs" />
     <Compile Include="Configuration\ScratchpadFubuRegistry.cs" />
     <Compile Include="Configuration\WebBootstrapper.cs" />
+    <Compile Include="Endpoints\DashboardEndpoint.cs" />
+    <Compile Include="Endpoints\EndpointMarker.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -107,6 +111,7 @@
       <Name>Scratchpad</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <ProjectExtensions>

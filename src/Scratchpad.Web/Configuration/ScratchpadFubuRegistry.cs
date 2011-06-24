@@ -1,4 +1,5 @@
 using FubuMVC.Core;
+using Scratchpad.Web.Endpoints;
 
 namespace Scratchpad.Web.Configuration
 {
@@ -11,10 +12,13 @@ namespace Scratchpad.Web.Configuration
             Applies
                 .ToThisAssembly();
 
+            this.ApplyEndpointConventions();
+
+            Routes
+                .HomeIs<DashboardEndpoint>(e => e.Get(new DashboardRequestModel()));
+
             Views
                 .TryToAttachWithDefaultConventions();
         }
     }
-
-    // You want this reusable for integration testing
 }
