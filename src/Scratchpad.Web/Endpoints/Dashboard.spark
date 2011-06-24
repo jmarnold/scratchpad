@@ -5,4 +5,7 @@
   <ul>
     <li each="var user in Model.Users">${user.LastName}, ${user.FirstName}</li>
   </ul>
+  <a href="${this.Urls.UrlFor(new Scratchpad.Web.Endpoints.Users.CreateUserInputModel())}" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false">
+    <span class="ui-button-text">+ New User</span>
+  </a>
 </content:main>

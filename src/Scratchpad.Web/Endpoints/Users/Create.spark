@@ -1,0 +1,76 @@
+﻿<viewdata model="Scratchpad.Web.Endpoints.Users.CreateUserViewModel" />
+<content:title>Create User</content:title>
+<content:head>
+  <Script src="~/Content/Scripts/jquery/jquery-1.4.4.min.js" />
+  <Script src="~/Content/Scripts/jquery/jquery.form.js" />
+  <Script src="~/Content/Scripts/jquery/jquery.validate.js" />
+</content:head>
+<content:main>
+  <h2>Create User</h2>
+  <Form model="Scratchpad.Web.Endpoints.Users.CreateUserInputModel">
+    <div class="ui-widget ui-success" style="display: none;">
+      <div class="ui-state-highlight ui-corner-all">
+        <p>
+          <span style="float: left; margin-right: 0.3em;" class="ui-icon ui-icon-info"></span>
+          <span class="ui-text">User has been saved.</span>
+        </p>
+      </div>
+    </div>
+    <div class="ui-widget ui-error" style="display: none;">
+      <div class="ui-state-error ui-corner-all">
+        <p>
+          <span style="float: left; margin-right: 0.3em;" class="ui-icon ui-icon-alert"></span>
+          <span class="ui-text">An error has occurred. Please contact an administrator.</span>
+        </p>
+        <ul></ul>
+      </div>
+    </div>
+    <fieldset class="stacked">
+      <RowFor property="FirstName"/>
+      <RowFor property="LastName"/>
+      <div class="row row-submit">
+        <button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false" type="submit">
+          <span class="ui-button-text">Create User</span>
+        </button>
+      </div>
+    </fieldset>
+  </Form>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('#mainForm').validate({
+        errorElement: 'span',
+        errorPlacement: function(error, element) { error.prependTo(element.parent()); },
+        submitHandler: function(form) {
+          $(form).ajaxSubmit({
+            url: $(form).attr('action'),
+            type: 'POST',
+            dataType: 'json',
+            success: function(response) {
+              if (response.Success) {
+                $(form).find('.ui-success').fadeIn('slow', function() {
+                  setTimeout(function() { $(form).find('.ui-success').fadeOut(); }, 6000);
+                });
+              }
+              else {
+                $(form).find('.ui-error').fadeIn('slow', function() {
+                  var list = $(form).find('.ui-state-error > ul');
+                  for(var i = 0; i < response.Errors.length; i++) {
+                    // TODO -- use the field/message info
+                    list.append('<li>' + response.Errors[i].message + '</li>');
+                  }
+                });
+              }
+            },
+            error: function(responseObj, textError, errorCode) {
+              $(form).find('.ui-error').fadeIn('slow', function() {
+                setTimeout(function() { $(form).find('.ui-error').fadeOut(); }, 6000);
+              });
+            }
+          });
+
+          return false;
+        }
+      });
+    });
+  </script>
+</content:main>

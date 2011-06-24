@@ -92,10 +92,11 @@
     <Content Include="Content\Images\filter_wrap_right.gif" />
     <Content Include="Content\Images\logo.png" />
     <Content Include="Content\Images\pre_code_bg_blk.gif" />
-    <Content Include="Content\Scripts\jquery\jquery-1.4.4.js" />
     <Content Include="Content\Scripts\jquery\jquery-1.4.4.min.js" />
     <Content Include="Content\Scripts\jquery\jquery-ui-1.8.10.custom.min.js" />
+    <Content Include="Content\Scripts\jquery\jquery.form.js" />
     <Content Include="Content\Scripts\jquery\jquery.metadata.js" />
+    <Content Include="Content\Scripts\jquery\jquery.validate.js" />
     <Content Include="Content\Scripts\json2.js" />
     <Content Include="Content\Styles\blueprint\ie.css" />
     <Content Include="Content\Styles\blueprint\print.css" />
@@ -123,13 +124,20 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration\Bootstrapping\ValidationBootstrapRegistry.cs" />
     <Compile Include="Configuration\Bootstrapping\WebCoreRegistry.cs" />
+    <Compile Include="Configuration\JsonActionSource.cs" />
+    <Compile Include="Configuration\JsonValidationFailurePolicy.cs" />
+    <Compile Include="Configuration\ScratchpadHtmlConventions.cs" />
+    <Compile Include="Configuration\ScratchpadValidationRegistry.cs" />
     <Compile Include="Configuration\FubuExtensions.cs" />
     <Compile Include="Configuration\Policies\EndpointUrlPolicy.cs" />
     <Compile Include="Configuration\ScratchpadFubuRegistry.cs" />
     <Compile Include="Configuration\WebBootstrapper.cs" />
     <Compile Include="Endpoints\DashboardEndpoint.cs" />
     <Compile Include="Endpoints\EndpointMarker.cs" />
+    <Compile Include="Endpoints\JsonResponse.cs" />
+    <Compile Include="Endpoints\Users\CreateEndpoint.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -144,6 +152,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Endpoints\Dashboard.spark" />
+    <None Include="Endpoints\Users\Create.spark" />
     <None Include="Shared\Application.spark" />
     <None Include="Shared\_global.spark" />
   </ItemGroup>
