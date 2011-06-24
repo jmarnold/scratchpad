@@ -1,4 +1,5 @@
 using FubuMVC.Core;
+using FubuMVC.Spark;
 using Scratchpad.Web.Endpoints;
 
 namespace Scratchpad.Web.Configuration
@@ -13,6 +14,8 @@ namespace Scratchpad.Web.Configuration
                 .ToThisAssembly();
 
             this.ApplyEndpointConventions();
+
+            this.UseSpark();
 
             Routes
                 .HomeIs<DashboardEndpoint>(e => e.Get(new DashboardRequestModel()));

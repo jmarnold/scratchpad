@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title><use content="title"/> | Scratchpad</title>
+	<Stylesheet href="default.css" />
+	<use content="head"/>
+</head>
+<body>
+<div id="Header">
+	<div class="container">
+		<div id="Logo">
+			<h2>
+				<a href="${this.Urls.UrlFor(new DashboardRequestModel())}">
+					<Image src="logo.png" />
+				</a>
+			</h2>
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>
+<div id="Content">
+    <div class="container">
+	    <use content="main" />
+    </div>
+</div>
+<div id="Footer">
+</div>
+</body>
+</html>

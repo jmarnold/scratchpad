@@ -1,0 +1,8 @@
+﻿<viewdata model="Scratchpad.Web.Endpoints.DashboardViewModel" />
+<content:title>Dashboard</content:title>
+<content:main>
+  <h2>Scratchpad Dashboard</h2>
+  <ul>
+    <li each="var user in Model.Users">${user.LastName}, ${user.FirstName}</li>
+  </ul>
+</content:main>

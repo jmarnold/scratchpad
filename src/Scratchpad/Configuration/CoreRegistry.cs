@@ -10,6 +10,7 @@ namespace Scratchpad.Configuration
                      {
                          x.TheCallingAssembly();
                          x.LookForRegistries();
+                         x.WithDefaultConventions();
                      });
         }
     }

@@ -1,0 +1,5 @@
+﻿<use namespace="System.Linq" />
+﻿<use namespace="FubuMVC.Core.UI" />
+<use namespace="Scratchpad"/>
+<use namespace="Scratchpad.Web"/>
+<use namespace="Scratchpad.Web.Endpoints"/>
